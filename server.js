@@ -90,9 +90,56 @@ app.get('/divide', (req, res) => {
     }
 });
 
+// Exponentiation endpoint
+app.get('/exponentiate', (req, res) => {
+    const base = parseFloat(req.query.base);
+    const exponent = parseFloat(req.query.exponent);
+    if (isNaN(base) || isNaN(exponent)) {
+        logger.log({
+            level: 'error',
+            message: 'Invalid input parameters for exponentiation'
+        });
+        res.status(400).send('Invalid input parameters for exponentiation');
+    } else {
+        const result = Math.pow(base, exponent);
+        res.send(`Result: ${result}`);
+    }
+});
+
+// Square root endpoint
+app.get('/squareroot', (req, res) => {
+    const num = parseFloat(req.query.num);
+    if (isNaN(num) || num < 0) {
+        logger.log({
+            level: 'error',
+            message: 'Invalid input parameter for square root'
+        });
+        res.status(400).send('Invalid input parameter for square root');
+    } else {
+        const result = Math.sqrt(num);
+        res.send(`Result: ${result}`);
+    }
+});
+
+// Modulo endpoint
+app.get('/modulo', (req, res) => {
+    const dividend = parseFloat(req.query.dividend);
+    const divisor = parseFloat(req.query.divisor);
+    if (isNaN(dividend) || isNaN(divisor) || divisor === 0) {
+        logger.log({
+            level: 'error',
+            message: 'Invalid input parameters for modulo operation'
+        });
+        res.status(400).send('Invalid input parameters for modulo operation');
+    } else {
+        const result = dividend % divisor;
+        res.send(`Result: ${result}`);
+    }
+});
+
 // Handling root path
 app.get('/', (req, res) => {
-    res.send('Welcome to the Arithmetic Operations API. Use /add, /subtract, /multiply, /divide endpoints to perform arithmetic operations.');
+    res.send('Welcome to the Advanced Arithmetic Operations API. Use /add, /subtract, /multiply, /divide, /exponentiate, /squareroot, /modulo endpoints to perform arithmetic operations.');
 });
 
 // Error handling middleware
@@ -106,5 +153,5 @@ app.use((err, req, res, next) => {
 
 // Start the server
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${3000}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });

@@ -29,3 +29,18 @@
 {"level":"info","message":"Received GET request for /multiply?num1=3&num2=4 from ::1","service":"calculator-microservice"}
 {"level":"info","message":"Received GET request for /multiply?num1=a&num2=4 from ::1","service":"calculator-microservice"}
 {"level":"error","message":"Invalid input parameters for multiplication","service":"calculator-microservice"}
+{"level":"info","message":"Received GET request for /multiply?num1=a&num2=4 from ::1","service":"calculator-microservice"}
+{"level":"error","message":"Invalid input parameters for multiplication","service":"calculator-microservice"}
+{"level":"info","message":"Received GET request for /multiply?num1=11&num2=4 from ::1","service":"calculator-microservice"}
+{"level":"info","message":"Received GET request for /squareroot?num=9 from ::1","service":"calculator-microservice"}
+{"level":"info","message":"Received GET request for /squareroot?num=0 from ::1","service":"calculator-microservice"}
+{"level":"info","message":"Received GET request for /squareroot?num=a from ::1","service":"calculator-microservice"}
+{"level":"error","message":"Invalid input parameter for square root","service":"calculator-microservice"}
+{"level":"info","message":"Received GET request for /modulo?dividend=25&divisor=3 from ::1","service":"calculator-microservice"}
+{"level":"info","message":"Received GET request for /modulo?dividend=2a&divisor=3 from ::1","service":"calculator-microservice"}
+{"level":"info","message":"Received GET request for /modulo?dividend=aa&divisor=3 from ::1","service":"calculator-microservice"}
+{"level":"error","message":"Invalid input parameters for modulo operation","service":"calculator-microservice"}
+{"level":"info","message":"Received GET request for /exponentiate?base=3&exponent=4 from ::1","service":"calculator-microservice"}
+{"level":"info","message":"Received GET request for /exponentiate?base=3&exponent=6 from ::1","service":"calculator-microservice"}
+{"level":"info","message":"Received GET request for /exponentiate?base=3&exponent=ss from ::1","service":"calculator-microservice"}
+{"level":"error","message":"Invalid input parameters for exponentiation","service":"calculator-microservice"}
